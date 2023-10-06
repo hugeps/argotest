@@ -1,0 +1,13 @@
+bucket=$(echo "crossplane-bucket-"$(head -n 4096 /dev/urandom | openssl sha1 | tail -c 10))
+cat <<EOF | kubectl apply -f -
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: sandbox-guestbook-$bucket
+spec:
+  forProvider:
+    region: eu-west-1
+  providerConfigRef:
+    name: default
+EOF
+
