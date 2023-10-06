@@ -1,7 +1,7 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: sandbox-guestbook-$bucket
+  name: sandbox-guestbook
 spec:
   forProvider:
     region: eu-west-1
