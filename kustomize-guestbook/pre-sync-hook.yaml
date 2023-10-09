@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: app-terraform-pre-sync-
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: terraform-plan
+        image: sos/poc-bill-of-materials:latest
+        command:
+          - "plan"
+      restartPolicy: Never
+  backoffLimit: 2
