@@ -25,5 +25,5 @@ spec:
           - "/bin/sh"
           - "-c"
           - "'Ansible job run here'"
-    restartPolicy: Never
+      restartPolicy: Never
   backoffLimit: 2
