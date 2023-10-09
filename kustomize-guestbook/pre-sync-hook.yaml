@@ -14,6 +14,16 @@ spec:
         command:
           - "terraform"
           - "plan"
-          - "nothing that works goes here to fail"
-      restartPolicy: Never
+      - name: terraform-apply
+        image: localhost:5000/sos/poc-bill-of-materials:latest
+        command:
+          - "terraform"
+          - "apply"
+      - name: ansible-job
+        image: localhost:5000/sos/poc-bill-of-materials:latest
+        command:
+          - "/bin/sh"
+          - "-c"
+          - "'Ansible job run here'"
+    restartPolicy: Never
   backoffLimit: 2
