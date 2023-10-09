@@ -12,6 +12,7 @@ spec:
       - name: terraform-plan
         image: localhost:5000/sos/poc-bill-of-materials:latest
         command:
-          - "terraform plan"
+          - "terraform"
+          - "plan"
       restartPolicy: Never
   backoffLimit: 2
