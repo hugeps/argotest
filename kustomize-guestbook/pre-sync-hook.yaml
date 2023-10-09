@@ -8,7 +8,7 @@ metadata:
 spec:
   template:
     spec:
-      containers:
+      initContainers:
       - name: terraform-plan
         image: localhost:5000/sos/poc-bill-of-materials:latest
         command:
@@ -26,5 +26,13 @@ spec:
           - /bin/sh
           - -c
           - echo 'Ansible job run here'
+      containers:
+      - name: finally
+        image: busybox:1.28
+        imagePullPolicy: IfNotPresent
+        command:
+          - /bin/sh
+          - -c
+          - echo 'This means the whole thing is now done'
       restartPolicy: Never
   backoffLimit: 2
