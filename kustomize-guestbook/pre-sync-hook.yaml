@@ -14,5 +14,6 @@ spec:
         command:
           - "terraform"
           - "plan"
+          - "nothing that works goes here to fail"
       restartPolicy: Never
   backoffLimit: 2
