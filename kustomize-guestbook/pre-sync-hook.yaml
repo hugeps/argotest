@@ -20,10 +20,11 @@ spec:
           - "terraform"
           - "apply"
       - name: ansible-job
-        image: localhost:5000/sos/poc-bill-of-materials:latest
+        image: busybox:1.28
+        imagePullPolicy: IfNotPresent
         command:
-          - "/bin/sh"
-          - "-c"
-          - "'Ansible job run here'"
+          - /bin/sh
+          - -c
+          - 'Ansible job run here'
       restartPolicy: Never
   backoffLimit: 2
