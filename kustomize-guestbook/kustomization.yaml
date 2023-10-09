@@ -2,7 +2,7 @@ namePrefix: kustomize-
 
 resources:
 # - guestbook-ui-bucket.yaml
-# - pre-sync-hook.yaml
+- pre-sync-hook.yaml
 - guestbook-ui-deployment.yaml
 - guestbook-ui-svc.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
