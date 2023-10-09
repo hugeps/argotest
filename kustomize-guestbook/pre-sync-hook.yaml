@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: terraform-plan
-        image: sos/poc-bill-of-materials:latest
+        image: localhost:5000/sos/poc-bill-of-materials:latest
         command:
           - "plan"
       restartPolicy: Never
