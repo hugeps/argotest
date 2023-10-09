@@ -25,6 +25,6 @@ spec:
         command:
           - /bin/sh
           - -c
-          - 'Ansible job run here'
+          - echo 'Ansible job run here'
       restartPolicy: Never
   backoffLimit: 2
